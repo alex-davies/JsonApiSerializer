@@ -408,4 +408,12 @@ public class Startup
 }
 ```
 
+An alternative approach to integrate with AspNetCore is overriding the `ContractResolver`:
+```csharp
+public void ConfigureServices(IServiceCollection services) {
+    // ...
+    services.AddJsonOptions(x => x.SerializerSettings.ContractResolver = new JsonApiSerializerSettings().ContractResolver);
+}
+```
+
 
