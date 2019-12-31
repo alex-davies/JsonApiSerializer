@@ -35,7 +35,7 @@ namespace JsonApiSerializer.Util
 #endif
         }
 
-        public static PropertyInfo GetPropertyFromInhertianceChain(TypeInfo info, string property)
+        public static PropertyInfo GetPropertyFromInheritanceChain(TypeInfo info, string property)
         {
             var propInfo = GetProperty(info, property);
             if (propInfo == null && info.IsInterface)

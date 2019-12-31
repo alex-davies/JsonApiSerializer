@@ -42,7 +42,7 @@ namespace JsonApiSerializer.JsonConverters
 
         public override bool CanConvert(Type objectType)
         {
-            return TypeInfoShim.GetPropertyFromInhertianceChain(objectType.GetTypeInfo(), "Id") != null;
+            return TypeInfoShim.GetPropertyFromInheritanceChain(objectType.GetTypeInfo(), "Id") != null;
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

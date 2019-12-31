@@ -32,8 +32,8 @@ namespace JsonApiSerializer.JsonConverters
         internal bool IsExplicitRelationship(Type objectType)
         {
             var typeInfo = objectType.GetTypeInfo();
-            return TypeInfoShim.GetPropertyFromInhertianceChain(typeInfo, PropertyNames.Data) != null
-                || TypeInfoShim.GetPropertyFromInhertianceChain(typeInfo, PropertyNames.Links) != null;
+            return TypeInfoShim.GetPropertyFromInheritanceChain(typeInfo, PropertyNames.Data) != null
+                || TypeInfoShim.GetPropertyFromInheritanceChain(typeInfo, PropertyNames.Links) != null;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
