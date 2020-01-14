@@ -357,7 +357,9 @@ This can be achieved by creating a custom `JsonConvertor` extending from `Resoru
 
 This convertor can be added into the system in a number of ways 
 
-1. Adding it globally to all resource objects by specifiying during the creation of the `JsonApiSerializerSettings`
+1. Adding it globally to all resource objects by specifiying during the creation of the `JsonApiSerializerSettings`.
+
+**Note that the custom converter is saved via the `ContractResolver` property. Therefore, if you also override the `JsonApiContractResolver` and set it as the `JsonApiSerializerSettings.ContractResolver`, make sure to pass in your custom `JsonConverter` to it's constructor.**
 ```csharp
 var settings = new JsonApiSerializerSettings(new MyTypeDeterminingResourceObjectConvertor())
 Article[] articles = JsonConvert.DeserializeObject<Article[]>(json, settings);
