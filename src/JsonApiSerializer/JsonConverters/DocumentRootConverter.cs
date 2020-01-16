@@ -237,7 +237,7 @@ namespace JsonApiSerializer.JsonConverters
             var dataProp = objContract.Properties.GetClosestMatchProperty("data");
 
             var root = serializer.Deserialize(reader, documentRootType);
-            return dataProp.ValueProvider.GetValue(root);
+            return root != null ? dataProp.ValueProvider.GetValue(root) : null;
         }
 
         internal static void ResolveAsRootData(JsonWriter writer, object value, JsonSerializer serializer)
