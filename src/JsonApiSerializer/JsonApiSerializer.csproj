@@ -12,7 +12,15 @@
     <AssemblyVersion>1.7.4.0</AssemblyVersion>
     <FileVersion>1.7.4.0</FileVersion>
     <PackageReleaseNotes>Fixed issue that would cuase stackoverflow errors when handling circular references when `included` section is present before `data`</PackageReleaseNotes>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
